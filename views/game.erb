@@ -7,7 +7,7 @@
 <ul class="well">
   <h4>Dealer's cards</h4>
 
-  <% dealer_cards.each do |card| %>
+  <% session[:dealer_cards].each do |card| %>
 
    <li class="alert-danger"> <%= card.to_s %> </li>
 
@@ -18,7 +18,7 @@
 
 <ul class="well">
   <h4>Player's cards</H4>
-  <% @player_cards.each do |card| %>
+  <% session[:player_cards].each do |card| %>
 
   <li> <%= card.to_s %>  </li>
   <% end %>
@@ -26,7 +26,7 @@
 </ul>
 
 <div class="alert-info">
-  <h4><%= @player_name %> has <%=calculating_the_total (@player_cards) %></h4>
+  <h4><%= session[:player_name] %> has <%=calculating_the_total session[:player_cards] %></h4>
   <p>What would u like to do? </p>
 
 </div>

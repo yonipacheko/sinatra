@@ -47,15 +47,15 @@ helpers do
 
 end
 
+
 before do
-  @player_name = session[:player_name]
-  @deck =  session[:deck]
-  @dealer_cards =  session[:dealer_cards]
-  @player_cards = session[:player_cards]
+  
 end
 
+
+
 get '/' do
-  if @player_name
+  if ( session[:player_name] )
 
     # progress to the game
     redirect '/game'
@@ -71,7 +71,7 @@ end
 
 post '/new_player' do
 
-  @player_name = params[:player_name]
+  session[:player_name] = params[:player_name]
   redirect '/game'
 end
 
@@ -79,21 +79,21 @@ get '/game' do
 
   # VARIABLES
 
-  @dealer_cards = []
-  @player_cards = []
+  session[:dealer_cards] = []
+  session[:player_cards] = []
 
 
   suits = ['H', 'D', 'S', 'C']
   cards = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
 
-  @deck = suits.product(cards).shuffle!
+  session[:deck] = suits.product(cards).shuffle!
 
   # DEALING CARDS
 
-  @player_cards << @deck.pop
-  @dealer_cards << @deck.pop
-  @player_cards << @deck.pop
-  @dealer_cards << @deck.pop
+  session[:dealer_cards] << session[:deck].pop
+  session[:player_cards] << session[:deck].pop
+  session[:dealer_cards] << session[:deck].pop
+  session[:player_cards] << session[:deck].pop
 
 
 
@@ -122,4 +122,9 @@ end
 get '/pictures' do
   @images = IMAGES
   erb :my_album
+end
+
+
+after do
+
 end
