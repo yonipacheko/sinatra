@@ -6,7 +6,8 @@
 
 <ul class="well">
   <h4>Dealer's cards</h4>
-  <% @dealer_cards.each do |card| %>
+
+  <% dealer_cards.each do |card| %>
 
    <li class="alert-danger"> <%= card.to_s %> </li>
 
@@ -33,11 +34,11 @@
 <div class="buttons well-small">
 
   <form action="/game/player/hit" method="post">
-    <input class="btn btn-success" type="button" value="hit"/>
+    <input class="btn btn-success" type="submit" value="hit"/>
   </form>
 
   <form action="/game/player/stay" method="post">
-    <input class="btn btn-warning " type="button" value="stay"/>
+    <input class="btn btn-warning " type="submit" value="stay"/>
   </form>
 
 

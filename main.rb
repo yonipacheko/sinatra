@@ -47,8 +47,15 @@ helpers do
 
 end
 
+before do
+  @player_name = session[:player_name]
+  @deck =  session[:deck]
+  @dealer_cards =  session[:dealer_cards]
+  @player_cards = session[:player_cards]
+end
+
 get '/' do
-  if session[:player_name]
+  if @player_name
 
     # progress to the game
     redirect '/game'
@@ -64,17 +71,14 @@ end
 
 post '/new_player' do
 
-  session[:player_name] = params[:player_name]
+  @player_name = params[:player_name]
   redirect '/game'
 end
 
 get '/game' do
 
   # VARIABLES
-  @player_name = session[:player_name]
-  @deck =  session[:deck]
-  @dealer_cards =  session[:dealer_cards]
-  @player_cards = session[:player_cards]
+
   @dealer_cards = []
   @player_cards = []
 
@@ -100,9 +104,11 @@ post '/game/player/hit' do
 
   session[:player_cards] << session[:deck].pop
   #@player_cards << @deck.pop
+=begin
   if (!is_it_blackjack?)
        @error = "Sorry, you lose!"
   end
+=end
 
   erb :game
 end
