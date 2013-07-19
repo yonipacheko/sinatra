@@ -8,12 +8,110 @@ IMAGES = [
 ]
 
 
+
 set :sessions, true
 
-get '/' do
-  'it\'s working!'
+
+helpers do
+  # CALCULATING THE TOTAL
+
+  def calculating_the_total (cards)
+    # [['H', '3'], ['S', 'Q'], ... ]
+    arr = cards.map{|e| e[1] }
+
+    total = 0
+    arr.each do |value|
+      if value == "A"
+        total += 11
+      elsif value.to_i == 0 # J, Q, K
+        total += 10
+      else
+        total += value.to_i
+      end
+    end
+
+    #correct for Aces
+    arr.select{|e| e == "A"}.count.times do
+      total -= 10 if total > 21
+    end
+
+    total
+
+  end #ends calculating_the_total
+
+  def is_it_blackjack?
+    if ( calculating_the_total == 21 )
+      return true
+    end
+  end
 
 end
+
+get '/' do
+  if session[:player_name]
+
+    # progress to the game
+    redirect '/game'
+    p 'OK'
+  else
+    redirect '/new_player'
+  end
+end
+
+get '/new_player' do
+  erb :new_player
+end
+
+post '/new_player' do
+
+  session[:player_name] = params[:player_name]
+  redirect '/game'
+end
+
+get '/game' do
+
+  # VARIABLES
+  @player_name = session[:player_name]
+  @deck =  session[:deck]
+  @dealer_cards =  session[:dealer_cards]
+  @player_cards = session[:player_cards]
+  @dealer_cards = []
+  @player_cards = []
+
+
+  suits = ['H', 'D', 'S', 'C']
+  cards = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+
+  @deck = suits.product(cards).shuffle!
+
+  # DEALING CARDS
+
+  @player_cards << @deck.pop
+  @dealer_cards << @deck.pop
+  @player_cards << @deck.pop
+  @dealer_cards << @deck.pop
+
+
+
+  erb :game
+end
+
+post '/game/player/hit' do
+
+  session[:player_cards] << session[:deck].pop
+  #@player_cards << @deck.pop
+  if (!is_it_blackjack?)
+       @error = "Sorry, you lose!"
+  end
+
+  erb :game
+end
+
+post '/game/player/stay' do
+
+end
+
+
 
 get '/pictures' do
   @images = IMAGES
