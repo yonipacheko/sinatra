@@ -1,3 +1,11 @@
 li{
     list-style: none;
 }
+.well{
+    overflow: hidden;
+}
+.well .showing_cards{
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}

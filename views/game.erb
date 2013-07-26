@@ -1,4 +1,4 @@
-<h1>This is Blackjack!!</h1>
+<h1>Casino "El peligro"</h1>
 
 
 <h3>Welcome <%= session[:player_name] %></h3>
@@ -9,10 +9,21 @@
 
   <% session[:dealer_cards].each do |card| %>
 
-   <li class="alert-danger"> <%= card.to_s %> </li>
+   <li class="showing_cards alert-danger"> <%= making_image_element(card) %> </li>
 
   <% end %>
 </ul>
+
+  <% if( @dealer_btn ) %>
+    <div class="alert-info">
+      <h4>Dealer has <%=calculating_the_total session[:dealer_cards] %> and will hit</h4>
+    </div>
+    <form action="/game/dealer/next_card" method="post">
+      <input class="btn btn-primary" type="submit" value="Click to see dealer's next card"/>
+    </form>
+  <% end %>
+
+
 
 
 
@@ -20,30 +31,30 @@
   <h4>Player's cards</H4>
   <% session[:player_cards].each do |card| %>
 
-  <li> <%= card.to_s %>  </li>
+  <li class="showing_cards alert-danger"> <%= making_image_element(card) %> </li>
   <% end %>
 
 </ul>
 
-<div class="alert-info">
-  <h4><%= session[:player_name] %> has <%=calculating_the_total session[:player_cards] %></h4>
-  <p>What would u like to do? </p>
 
-</div>
+<% if (@main_btn_visible) %>
+  <div class="alert-info">
+    <h4><%= session[:player_name] %> has <%= calculating_the_total session[:player_cards] %></h4>
 
-<div class="buttons well-small">
+    <p>What would u like to do? </p>
 
-  <form action="/game/player/hit" method="post">
-    <input class="btn btn-success" type="submit" value="hit"/>
-  </form>
+  </div>
+  <div class="buttons well-small">
 
-  <form action="/game/player/stay" method="post">
-    <input class="btn btn-warning " type="submit" value="stay"/>
-  </form>
+    <form action="/game/player/hit" method="post">
+      <input class="btn btn-success" type="submit" value="hit"/>
+    </form>
+
+    <form action="/game/player/stay" method="post">
+      <input class="btn btn-warning " type="submit" value="stay"/>
+    </form>
+
+  </div>
 
 
-
-
-</div>
-
-
+<% end %>

@@ -20,6 +20,8 @@
   <div class="container">
     <%if @error %>
       <div class="alert alert-error"><%=@error%></div>
+    <% elsif @sucess %>
+      <div class="alert alert-info"><%=@sucess%></div>
     <% end %>
       <%= yield %>
   </div>
