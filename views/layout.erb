@@ -11,7 +11,8 @@
       <div class="navbar-inner">
         <div class="container">
             <ul class="nav">
-              <li><a href="/">Nav Item</a></li>
+              <li><a href="/new_player">Star Over</a></li>
+              <li><a href="/betting_page">Play again?</a></li>
             </ul>
         </div>
       </div>
@@ -20,8 +21,8 @@
   <div class="container">
     <%if @error %>
       <div class="alert alert-error"><%=@error%></div>
-    <% elsif @sucess %>
-      <div class="alert alert-info"><%=@sucess%></div>
+    <% elsif @success %>
+      <div class="alert alert-info"><%=@success%></div>
     <% end %>
       <%= yield %>
   </div>

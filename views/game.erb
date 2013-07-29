@@ -7,10 +7,13 @@
 <ul class="well">
   <h4>Dealer's cards</h4>
 
-  <% session[:dealer_cards].each do |card| %>
+  <% session[:dealer_cards].each_with_index do |card, i| %>
+    <% if session[:turn] != 'dealer' && i == 0 %>
+    <li class="showing_cards"><img src="/images/cards/cover.jpg" alt="cover_card"/></li>
 
+    <% else %>
    <li class="showing_cards alert-danger"> <%= making_image_element(card) %> </li>
-
+    <% end %>
   <% end %>
 </ul>
 

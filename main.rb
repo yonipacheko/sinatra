@@ -14,6 +14,10 @@ set :sessions, true
 
 
 helpers do
+
+  def showing_cover
+    "<img src='/images/cards/cover.jpg'>"
+  end
   # CALCULATING THE TOTAL
 
   def calculating_the_total (cards)
@@ -70,23 +74,34 @@ helpers do
 
     "<img src='/images/cards/#{suit}_#{face_value}.jpg'>"
 
-  end #making_image_element
+  end # ends making_image_element
 
 
+  def do_we_have_right_value(value)
+    if 0 == value.to_i || value.to_i > 500
+      @error = "This amount should not be 0 and should not be more than 500."
+      halt erb :betting_page
+    end
+  end  # ends do_we_have_right_value
+
+  def updating_player_pot(value, switcher)
+    if(switcher)
+
+      return session[:player_pot] = session[:player_pot] + value.to_i # do I need to have this return-method ???
+    else
+    return session[:player_pot] = session[:player_pot] - value.to_i # do I need to have this return-method ???
+    end
+  end   # ends current_betting_amount
 
 end # ends helper
 
 
-def is_it_blackjack?
-  if  calculating_the_total == 22
-      return true
-  end
-end
 
 before do
   @main_btn_visible =  true   # making the main btn:s interact with the card-counter
   @dealer_btn = false    # making the dealer_btn to show up
 end
+
 get '/' do
   if ( session[:player_name] )
 
@@ -99,16 +114,32 @@ get '/' do
 end
 
 get '/new_player' do
+  session[:player_pot] = 500
   erb :new_player
 end
 
-post '/new_player' do
 
+post '/new_player' do
   session[:player_name] = params[:player_name]
+  redirect '/betting_page'
+end
+
+get '/betting_page' do
+  session[:betting_amount] = nil
+  erb :betting_page
+end
+
+post '/betting_page' do
+  session[:betting_amount] = params[:betting];
+  do_we_have_right_value( session[:betting_amount] )
+  #binding.pry
+
   redirect '/game'
 end
 
 get '/game' do
+
+session[:turn] = session[:player_name]
 
   # VARIABLES
 
@@ -138,10 +169,10 @@ post '/game/player/hit' do
   session[:player_cards] << session[:deck].pop
   #binding.pry
   player_total = calculating_the_total(session[:player_cards])
-  if ( player_total == 21)
-    @success = "Congra #{session[:player_name]}, U win, U hit blackjack!"
-  elsif (player_total > 21)
-    @error = "Sorry, but it seems like #{session[:player_name]} is busted"
+  if player_total == 21
+    @success = "Congra #{session[:player_name]}, U win, Yr total amount is #{updating_player_pot(session[:betting_amount], true)} !"
+  elsif player_total > 21
+    @error = "Sorry, but it seems like #{session[:player_name]} loses, You have #{updating_player_pot(session[:betting_amount], false)}."
     @main_btn_visible = false
   end
 
@@ -150,6 +181,7 @@ post '/game/player/hit' do
 end # ends hit:btn
 
 post '/game/player/stay' do
+
   @success = "#{session[:player_name]} has chosen to stay."
   @main_btn_visible = false
 
@@ -160,14 +192,18 @@ end # ends stay:btn
 
 
 get '/game/dealer' do
+  session[:turn] = 'dealer'
+
   @main_btn_visible = false
 
   dealer_total = calculating_the_total( session[:dealer_cards] )
 
   if dealer_total == 21
-    @success = "Dealer hit blackjack!"
+    @success = "Dealer hit blackjack!, your pont amount is #{updating_player_pot(session[:betting_amount], false)} "
+
   elsif dealer_total > 21
-    @error = "Dealer is busted, you win"
+    @error = "Dealer is busted, your pot amount is #{updating_player_pot(session[:betting_amount], true)}"
+
   elsif dealer_total  >= 17
     redirect '/game/dealer/compare'
   else
@@ -192,10 +228,12 @@ get '/game/dealer/compare' do
   dealer_total = calculating_the_total( session[:dealer_cards])
   player_total = calculating_the_total( session[:player_cards])
 
-  if ( dealer_total > player_total )
-    @success = "Sorry Dealer wins."
-  elsif ( dealer_total < player_total )
-    @success = "Congratualtions you win"
+  if dealer_total > player_total
+    @error = "Sorry Dealer wins. Dealer has #{dealer_total}. Your current pot amount is #{updating_player_pot(session[:betting_amount], false)
+    }"
+  elsif  dealer_total < player_total
+    @success = "Congratualtions you win, Dealer has #{dealer_total}. Your current pot amount is #{updating_player_pot(session[:betting_amount], true)
+    }"
   else
     @success = "It's a tie!!"
   end
