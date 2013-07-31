@@ -82,7 +82,7 @@ helpers do
 
   def do_we_have_right_value(value)
 
-    if 0 == value.to_i || value.to_i > INITIAL_POT_AMOUNT
+    if 0 == value.to_i || value.to_i <= INITIAL_POT_AMOUNT
       @error = "This amount should not be $0 and should not be more than $#{INITIAL_POT_AMOUNT}."
       halt erb :betting_page
     end
