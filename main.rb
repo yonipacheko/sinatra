@@ -49,13 +49,13 @@ helpers do
 
     suit = case arr[0]
              when 'H' then
-               'Hearts'
+               'hearts'
              when 'D' then
-               'Diamonds'
+               'diamonds'
              when 'S' then
-               'Spades'
+               'spades'
              when 'C' then
-               'Clubs'
+               'clubs'
            end
 
     face_value = arr[1]

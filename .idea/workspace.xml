@@ -4,7 +4,7 @@
     <list default="true" id="2dd7f477-50d7-4eb5-9a66-fc6a1d3854a5" name="Default" comment="" />
     <ignored path="tl-blackjack-webapp.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/main.rb" changelist="2dd7f477-50d7-4eb5-9a66-fc6a1d3854a5" time="1375215996452" ignored="false" />
+    <file path="/main.rb" changelist="2dd7f477-50d7-4eb5-9a66-fc6a1d3854a5" time="1375302423730" ignored="false" />
     <file path="/my_album.erb" changelist="2dd7f477-50d7-4eb5-9a66-fc6a1d3854a5" time="1374077982659" ignored="false" />
     <file path="/test.rb" changelist="2dd7f477-50d7-4eb5-9a66-fc6a1d3854a5" time="1374079202838" ignored="false" />
     <file path="/new_player.rb" changelist="2dd7f477-50d7-4eb5-9a66-fc6a1d3854a5" time="1374168489392" ignored="false" />
@@ -36,10 +36,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="230" column="45" selection-start="5459" selection-end="5459" vertical-scroll-proportion="0.0">
+            <state line="57" column="17" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.41308412">
               <folding />
             </state>
           </provider>
@@ -48,7 +48,7 @@
       <file leaf-file-name="game_over.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/game_over.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="50" selection-start="102" selection-end="102" vertical-scroll-proportion="-2.6153846">
+            <state line="4" column="50" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -57,7 +57,7 @@
       <file leaf-file-name="no_game.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/no_game.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="86" selection-end="86" vertical-scroll-proportion="-0.65384614">
+            <state line="1" column="0" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -66,7 +66,7 @@
       <file leaf-file-name="betting_page.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/betting_page.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="33" selection-start="248" selection-end="248" vertical-scroll-proportion="-4.576923">
+            <state line="7" column="33" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -75,7 +75,7 @@
       <file leaf-file-name="new_player.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/new_player.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="8" selection-start="128" selection-end="128" vertical-scroll-proportion="-3.9230769">
+            <state line="6" column="8" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -90,10 +90,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="game.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/game.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="26" selection-start="109" selection-end="109" vertical-scroll-proportion="0.1271028">
+            <state line="4" column="26" selection-start="109" selection-end="109" vertical-scroll-proportion="-2.6153846">
               <folding />
             </state>
           </provider>
@@ -102,10 +102,8 @@
       <file leaf-file-name="layout.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/layout.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="433" selection-end="433" vertical-scroll-proportion="-9.153846">
-              <folding>
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="14" column="0" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -133,8 +131,8 @@
         <option value="$PROJECT_DIR$/views/new_player.erb" />
         <option value="$PROJECT_DIR$/views/betting_page.erb" />
         <option value="$PROJECT_DIR$/public/application.css" />
-        <option value="$PROJECT_DIR$/main.rb" />
         <option value="$PROJECT_DIR$/views/game.erb" />
+        <option value="$PROJECT_DIR$/main.rb" />
       </list>
     </option>
   </component>
@@ -185,7 +183,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tl-blackjack-webapp" />
+              <option name="myItemId" value="my_blackjack-webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -195,11 +193,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tl-blackjack-webapp" />
+              <option name="myItemId" value="my_blackjack-webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tl-blackjack-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my_blackjack-webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cards" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -212,8 +232,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="preferences.keymap" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ruby_bootcamp" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -331,10 +351,9 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32685512" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18771331" sideWeight="0.6731449" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19112629" sideWeight="0.6731449" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -343,6 +362,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32685512" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -411,9 +431,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/views/my_album.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="97" selection-end="97" vertical-scroll-proportion="-3.9230769">
-          <folding />
-        </state>
+        <state line="6" column="0" selection-start="97" selection-end="97" vertical-scroll-proportion="-3.9230769" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/images/cards/cover.jpg">
@@ -421,39 +439,30 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layout.erb">
+    <entry file="file://$PROJECT_DIR$/views/game_over.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="433" selection-end="433" vertical-scroll-proportion="-9.153846">
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="4" column="50" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/no_game.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="86" selection-end="86" vertical-scroll-proportion="-0.65384614">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/game_over.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="50" selection-start="102" selection-end="102" vertical-scroll-proportion="-2.6153846">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/new_player.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="8" selection-start="128" selection-end="128" vertical-scroll-proportion="-3.9230769">
+        <state line="1" column="0" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/betting_page.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="33" selection-start="248" selection-end="248" vertical-scroll-proportion="-4.576923">
+        <state line="7" column="33" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/new_player.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="8" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -465,16 +474,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.rb">
+    <entry file="file://$PROJECT_DIR$/views/layout.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="230" column="45" selection-start="5459" selection-end="5459" vertical-scroll-proportion="0.0">
+        <state line="14" column="0" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/game.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="26" selection-start="109" selection-end="109" vertical-scroll-proportion="0.1271028">
+        <state line="4" column="26" selection-start="109" selection-end="109" vertical-scroll-proportion="-2.6153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="17" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.41308412">
           <folding />
         </state>
       </provider>
