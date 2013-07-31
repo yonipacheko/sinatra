@@ -81,12 +81,13 @@ helpers do
 
 
   def do_we_have_right_value(value)
-
-    if 0 == value.to_i || value.to_i <= INITIAL_POT_AMOUNT
+    #binding.pry
+    if 0 == value.to_i || value.to_i > session[:player_pot] || value.to_i < 0
       @error = "This amount should not be $0 and should not be more than $#{INITIAL_POT_AMOUNT}."
       halt erb :betting_page
+    else
+      redirect '/game'
     end
-
   end  # ends do_we_have_right_value
 
   def updating_player_pot(value, switcher)
@@ -148,7 +149,6 @@ post '/betting_page' do
   do_we_have_right_value( session[:betting_amount] )
   #binding.pry
 
-  redirect '/game'
 end
 
 get '/no_game' do
