@@ -1,8 +1,15 @@
-<h1>Casino "El peligro"</h1>
 
+<% if @showing_modal %>
+  <p class="well-small">
+    <strong>Play again?</strong>
+    <a href="/betting_page" class="btn btn-primary">Yes</a>
+    <a href="/game_over" class="btn btn-danger"> No</a>
+  </p>
+<% end %>
+
+<h1>Casino "Caballo azul"</h1>
 
 <h3>Welcome <%= session[:player_name] %></h3>
-
 
 <ul class="well">
   <h4>Dealer's cards</h4>
@@ -36,28 +43,30 @@
 
   <li class="showing_cards alert-danger"> <%= making_image_element(card) %> </li>
   <% end %>
-
+  <div class="clearfix"> </div>
+  <h5>
+    <%= session[:player_name] %> has $<%= session[:player_pot]%> and bet $<%=session[:betting_amount] %> for this round.
+  </h5>
 </ul>
 
 
 <% if (@main_btn_visible) %>
-  <div class="alert-info">
+  <div class="alert-info" id="blue-light">
     <h4><%= session[:player_name] %> has <%= calculating_the_total session[:player_cards] %></h4>
 
     <p>What would u like to do? </p>
 
   </div>
-  <div class="buttons well-small">
+  <div id="main-btns" class="buttons well-small">
 
     <form action="/game/player/hit" method="post">
-      <input class="btn btn-success" type="submit" value="hit"/>
+      <input class="btn btn-success btn-large" type="submit" value="hit"/>
     </form>
 
     <form action="/game/player/stay" method="post">
-      <input class="btn btn-warning " type="submit" value="stay"/>
+      <input class="btn btn-warning btn-large " type="submit" value="stay"/>
     </form>
 
   </div>
-
-
 <% end %>
+

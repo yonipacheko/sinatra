@@ -3,9 +3,38 @@ li{
 }
 .well{
     overflow: hidden;
+    margin-left: 0;
 }
 .well .showing_cards{
     float: left;
     margin-left: 10px;
     margin-bottom: 10px;
+}
+
+#blue-light{
+    padding: 10px 10px;
+
+}
+
+#main-btns{
+    overflow: hidden;
+    margin-top: 10px;
+    padding: 0;
+}
+#main-btns form{
+    float: left;
+
+}
+
+#main-btns :nth-child(2){
+    margin-left: 10px;
+}
+
+.buttons
+
+#no_game{
+    margin: auto;
+    width: 600px;
+    margin-top: 80px;
+
 }
