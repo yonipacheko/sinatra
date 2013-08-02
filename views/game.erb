@@ -31,7 +31,7 @@
       <h4>Dealer has <%= calculating_the_total session[:dealer_cards] %> and will hit</h4>
     </div>
     <form action="/game/dealer/next_card" method="post">
-      <input class="btn btn-primary" type="submit" value="Click to see dealer's next card"/>
+      <input id="next_card" class="btn btn-primary" type="submit" value="Click to see dealer's next card"/>
     </form>
   <% end %>
 

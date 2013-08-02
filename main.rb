@@ -239,7 +239,7 @@ get '/game/dealer' do
     @dealer_btn = true
   end
 
-  erb :game, layout: false
+  erb :game
 end
 
 post '/game/dealer/next_card' do
@@ -273,7 +273,7 @@ get '/game/dealer/compare' do
     @success = "It's a tie!!"
   end
 
-  erb :game, layout: false
+  erb :game
 end
 
 get '/game_over' do
