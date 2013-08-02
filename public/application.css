@@ -16,17 +16,17 @@ li{
 
 }
 
-#main-btns{
+.main-btns{
     overflow: hidden;
     margin-top: 10px;
     padding: 0;
 }
-#main-btns form{
+.main-btns form{
     float: left;
 
 }
 
-#main-btns :nth-child(2){
+.main-btns :nth-child(2){
     margin-left: 10px;
 }
 

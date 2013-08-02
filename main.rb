@@ -9,7 +9,6 @@ IMAGES = [
 ]
 
 
-
 set :sessions, true
 
 BLACKJACK_AMOUNT = 21
@@ -21,11 +20,12 @@ helpers do
   def showing_cover
     "<img src='/images/cards/cover.jpg'>"
   end
+
   # CALCULATING THE TOTAL
 
   def calculating_the_total (cards)
     # [['H', '3'], ['S', 'Q'], ... ]
-    arr = cards.map{|e| e[1] }
+    arr = cards.map { |e| e[1] }
 
     total = 0
     arr.each do |value|
@@ -39,11 +39,13 @@ helpers do
     end
 
     #correct for Aces
-    arr.select{|e| e == "A"}.count.times do
+    arr.select { |e| e == "A" }.count.times do
       total -= 10 if total > BLACKJACK_AMOUNT
     end
     total
-  end #ends calculating_the_total
+  end
+
+  #ends calculating_the_total
 
   def making_image_element(arr)
 
@@ -77,39 +79,41 @@ helpers do
 
     "<img src='/images/cards/#{suit}_#{face_value}.jpg'>"
 
-  end # ends making_image_element
+  end
+
+  # ends making_image_element
 
 
   def do_we_have_right_value(value)
     #binding.pry
     if 0 == value.to_i || value.to_i > session[:player_pot] || value.to_i < 0
-      @error = "This amount should not be $0 and should not be more than $#{INITIAL_POT_AMOUNT}."
+      @error = "This amount should be over $0 and should be less than $#{INITIAL_POT_AMOUNT}."
       halt erb :betting_page
     else
       redirect '/game'
     end
-  end  # ends do_we_have_right_value
+  end
+
+  # ends do_we_have_right_value
 
   def updating_player_pot(value, switcher)
-    if(switcher)
-
-      return session[:player_pot] = session[:player_pot] + value.to_i # do I need to have this return-method ???
+    if switcher
+      session[:player_pot] = session[:player_pot] + value.to_i
     else
-    return session[:player_pot] = session[:player_pot] - value.to_i # do I need to have this return-method ???
+      session[:player_pot] = session[:player_pot] - value.to_i
     end
-  end   # ends current_betting_amount
+  end # ends current_betting_amount
 
 end # ends helper
 
 
-
 before do
-  @main_btn_visible =  true   # making the main btn:s interact with the card-counter
-  @dealer_btn = false    # making the dealer_btn to show up
+  @main_btn_visible = true # making the main btn:s interact with the card-counter
+  @dealer_btn = false # making the dealer_btn to show up
 end
 
 get '/' do
-  if ( session[:player_name] )
+  if (session[:player_name])
 
     # progress to the game
     redirect '/game'
@@ -128,7 +132,7 @@ post '/new_player' do
 
   session[:player_name] = params[:player_name].capitalize
   if session[:player_name].empty? || session[:player_name] =~ /\d/
-    @error = "Try again!, you need to enter a proper name, thank you"
+    @error = "Try again!, you need to enter a proper name, thanks"
     halt erb :new_player
 
   end
@@ -136,7 +140,7 @@ post '/new_player' do
 end
 
 get '/betting_page' do
-  if session[:player_pot] == 0  # check-point, if the player has some money left?
+  if session[:player_pot] == 0 # check-point, if the player has some money left?
     redirect '/no_game'
   end
   session[:betting_amount] = nil
@@ -146,7 +150,7 @@ end
 
 post '/betting_page' do
   session[:betting_amount] = params[:betting];
-  do_we_have_right_value( session[:betting_amount] )
+  do_we_have_right_value(session[:betting_amount])
   #binding.pry
 
 end
@@ -158,7 +162,7 @@ end
 
 get '/game' do
 
-session[:turn] = session[:player_name]
+  session[:turn] = session[:player_name]
 
   # VARIABLES
 
@@ -177,7 +181,6 @@ session[:turn] = session[:player_name]
   session[:player_cards] << session[:deck].pop
   session[:dealer_cards] << session[:deck].pop
   session[:player_cards] << session[:deck].pop
-
 
 
   erb :game
@@ -200,7 +203,7 @@ post '/game/player/hit' do
     @main_btn_visible = false
   end
 
-  erb :game
+  erb :game, layout: false
 
 end # ends hit:btn
 
@@ -219,7 +222,7 @@ get '/game/dealer' do
 
   @main_btn_visible = false
 
-  dealer_total = calculating_the_total( session[:dealer_cards] )
+  dealer_total = calculating_the_total(session[:dealer_cards])
 
   if dealer_total == BLACKJACK_AMOUNT
     @showing_modal = true
@@ -230,13 +233,13 @@ get '/game/dealer' do
 
     @error = "Dealer is busted, your current pot-amount is #{updating_player_pot(session[:betting_amount], true)}"
 
-  elsif dealer_total  >= DEALER_MININUM_AMOUNT
+  elsif dealer_total >= DEALER_MININUM_AMOUNT
     redirect '/game/dealer/compare'
   else
     @dealer_btn = true
   end
 
-  erb :game
+  erb :game, layout: false
 end
 
 post '/game/dealer/next_card' do
@@ -251,8 +254,8 @@ get '/game/dealer/compare' do
   @main_btn_visible = false
 
 
-  dealer_total = calculating_the_total( session[:dealer_cards])
-  player_total = calculating_the_total( session[:player_cards])
+  dealer_total = calculating_the_total(session[:dealer_cards])
+  player_total = calculating_the_total(session[:player_cards])
 
   if dealer_total > player_total
     @showing_modal = true
@@ -270,7 +273,7 @@ get '/game/dealer/compare' do
     @success = "It's a tie!!"
   end
 
-  erb :game
+  erb :game, layout: false
 end
 
 get '/game_over' do
