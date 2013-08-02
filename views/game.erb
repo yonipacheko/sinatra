@@ -1,5 +1,9 @@
 <div id="game">
-
+  <%if @error %>
+    <div class="alert alert-error"><%=@error%></div>
+  <% elsif @success %>
+    <div class="alert alert-info"><%=@success%></div>
+  <% end %>
 
   <% if @showing_modal %>
     <p class="well-small">

@@ -21,11 +21,7 @@
     </div>
 
   <div class="container">
-    <%if @error %>
-      <div class="alert alert-error"><%=@error%></div>
-    <% elsif @success %>
-      <div class="alert alert-info"><%=@success%></div>
-    <% end %>
+
       <%= yield %>
   </div>
   </body>

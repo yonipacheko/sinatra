@@ -19,7 +19,7 @@ $(document).ready(function(){
 function hit_me() {
     //$(document).on("click", 'form #hit_me', function() {
 
-        alert('click on hit');
+       // alert('click on hit');
     $.ajax({
         type: 'POST',
         url: '/game/player/hit'})
@@ -36,7 +36,7 @@ function hit_me() {
 
 
 function stay_me() {
-    alert('click on stay');
+   // alert('click on stay');
     $.ajax({
         type: 'POST',
         url: '/game/player/stay'})
@@ -50,7 +50,7 @@ function stay_me() {
 }
 
 function dealer_hit_me(){
-    alert("dealer hits!");
+   // alert("dealer hits!");
     $.ajax({
         type: 'POST',
         url: '/game/dealer/next_card'
